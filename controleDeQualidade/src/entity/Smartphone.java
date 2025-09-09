@@ -1,6 +1,8 @@
 package entity;
 
 public class Smartphone {
-    private string marca;
+    private string capacidadeDaBateria;
+    private boolean conectividade5G;
+    
     
 }
