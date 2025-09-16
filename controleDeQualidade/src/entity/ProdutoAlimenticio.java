@@ -3,6 +3,7 @@ package entity;
 public class ProdutoAlimenticio extends Produto {
     private  String dataValidade;
     private  Boolean embalagemIntegra;
+    
 
 
     
@@ -20,6 +21,7 @@ public class ProdutoAlimenticio extends Produto {
 
     public String getDataValidade() {
         return dataValidade;
+        
     }
 
 

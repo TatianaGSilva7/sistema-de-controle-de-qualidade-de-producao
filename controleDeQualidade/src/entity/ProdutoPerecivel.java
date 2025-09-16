@@ -44,7 +44,7 @@ public class ProdutoPerecivel  extends ProdutoAlimenticio{
             double temp = Double.parseDouble(temperaturaArmazenamento);
             double max = Double.parseDouble(temperaturaMax);
             double min = Double.parseDouble(temperaturaMin);
-            
+
             return temp >= min && temp <= max;
         } catch (NumberFormatException e) {
 
