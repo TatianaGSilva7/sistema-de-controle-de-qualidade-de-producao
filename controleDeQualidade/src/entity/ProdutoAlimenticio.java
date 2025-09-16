@@ -1,8 +1,8 @@
 package entity;
 
 public class ProdutoAlimenticio extends Produto {
-    private  String dataValidade ;
-    private  Boolean embalagemIntegra ;
+    private  String dataValidade;
+    private  Boolean embalagemIntegra;
 
 
     
@@ -34,10 +34,12 @@ public class ProdutoAlimenticio extends Produto {
         return embalagemIntegra;
     }
 
-
-
     public void setEmbalagemIntegra(Boolean embalagemIntegra) {
         this.embalagemIntegra = embalagemIntegra;
+    }
+
+    public void testarEmbalagem(boolean embalagem){
+        embalagem = embalagemIntegra;
     }
     
 }

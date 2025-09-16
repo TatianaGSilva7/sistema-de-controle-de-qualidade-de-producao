@@ -3,7 +3,8 @@ package entity;
 public class ProdutoEletronico extends Produto{
 
     private String tensao;
-    private boolean aprovadoTeste;
+    private boolean existeTensao;
+    
 
     
     public ProdutoEletronico() {
@@ -11,14 +12,13 @@ public class ProdutoEletronico extends Produto{
     public ProdutoEletronico(String codigo, String nome, String lote) {
         super(codigo, nome, lote);
     }
-    public ProdutoEletronico(String tensao, boolean aprovadoTeste) {
+    public ProdutoEletronico(String tensao) {
         this.tensao = tensao;
-        this.aprovadoTeste = aprovadoTeste;
+ 
     }
-    public ProdutoEletronico(String codigo, String nome, String lote, String tensao, boolean aprovadoTeste) {
+    public ProdutoEletronico(String codigo, String nome, String lote, String tensao) {
         super(codigo, nome, lote);
         this.tensao = tensao;
-        this.aprovadoTeste = aprovadoTeste;
     }
     public String getTensao() {
         return tensao;
@@ -26,12 +26,11 @@ public class ProdutoEletronico extends Produto{
     public void setTensao(String tensao) {
         this.tensao = tensao;
     }
-    public boolean isAprovadoTeste() {
-        return aprovadoTeste;
+    public boolean isExisteTensao() {
+        return existeTensao;
     }
-    public void setAprovadoTeste(boolean aprovadoTeste) {
-        this.aprovadoTeste = aprovadoTeste;
+    public void setExisteTensao(boolean existeTensao) {
+        this.existeTensao = existeTensao;
     }
-
        
 }

@@ -7,12 +7,26 @@ public class Smartphone extends ProdutoEletronico{
     
     public Smartphone() {
     }
-
-    public Smartphone(String nome, double preco, String marca, String capacidadeDaBateria, boolean conectividade5G) {
-    super(capacidadeDaBateria , conectividade5G); // Chama o construtor da superclasse ProdutoEletronico
-    this.capacidadeDaBateria = capacidadeDaBateria;
-    this.conectividade5G = conectividade5G;
+    public Smartphone(String codigo, String nome, String lote, String capacidadeDaBateria, boolean conectividade5g) {
+        super(codigo, nome, lote);
+        this.capacidadeDaBateria = capacidadeDaBateria;
+        conectividade5G = conectividade5g;
     }
+
+    public Smartphone(String tensao, String capacidadeDaBateria, boolean conectividade5g) {
+        super(tensao);
+        this.capacidadeDaBateria = capacidadeDaBateria;
+        conectividade5G = conectividade5g;
+    }
+
+    public Smartphone(String codigo, String nome, String lote, String tensao, String capacidadeDaBateria,
+            boolean conectividade5g) {
+        super(codigo, nome, lote, tensao);
+        this.capacidadeDaBateria = capacidadeDaBateria;
+        conectividade5G = conectividade5g;
+    }
+
+
 
 
     public Smartphone(String capacidadeDaBateria, boolean conectividade5g) {
@@ -39,12 +53,19 @@ public class Smartphone extends ProdutoEletronico{
     public void setConectividade5G(boolean conectividade5g) {
         conectividade5G = conectividade5g;
     }
+    public boolean testarBateria(boolean valor){
+        return valor;
+    }
 
 
     @Override
-public boolean inspecionarQualidade() {
-    return conectividade5G && capacidadeDaBateria != null && !capacidadeDaBateria.isEmpty();
-
-    
+    public void inspecionarQualidade() {
+        if(this.isConectividade5G() && this.testarBateria(true) && super.isExisteTensao()){
+            setEstaAprovado(true);
+        }
+        else{
+            setEstaAprovado(false);
+        }
+        
 }
 }
