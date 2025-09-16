@@ -39,18 +39,25 @@ public class ProdutoPerecivel  extends ProdutoAlimenticio{
         this.temperaturaMin = temperaturaMin;
     }
 
-    public boolean testarTemperatura(String i){
-        i = temperaturaArmazenamento;
-        if(this.getTemperaturaMax().equals(i) && this.getTemperaturaMin().equals(i)){
+    public boolean testarTemperatura() {
+        try {
+            double temp = Double.parseDouble(temperaturaArmazenamento);
+            double max = Double.parseDouble(temperaturaMax);
+            double min = Double.parseDouble(temperaturaMin);
+            
+            return temp >= min && temp <= max;
+        } catch (NumberFormatException e) {
+
             return false;
-        }
-        else{
-            return true;
         }
     }
 
     @Override
-    public void inspecionarQualidade(){
-        
+    public void inspecionarQualidade() {
+        if (this.testarTemperatura() && super.testarEmbalagem()) {
+            setEstaAprovado(true);
+        } else {
+            setEstaAprovado(false);
+        }
     }
 }

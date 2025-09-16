@@ -53,14 +53,14 @@ public class Smartphone extends ProdutoEletronico{
     public void setConectividade5G(boolean conectividade5g) {
         conectividade5G = conectividade5g;
     }
-    public boolean testarBateria(boolean valor){
-        return valor;
+    public boolean testarBateria() {
+        return capacidadeDaBateria != null && !capacidadeDaBateria.isEmpty();
     }
 
 
     @Override
     public void inspecionarQualidade() {
-        if(this.isConectividade5G() && this.testarBateria(true) && super.isExisteTensao()){
+        if(this.isConectividade5G() && this.testarBateria() && super.isExisteTensao()){
             setEstaAprovado(true);
         }
         else{

@@ -38,8 +38,8 @@ public class ProdutoAlimenticio extends Produto {
         this.embalagemIntegra = embalagemIntegra;
     }
 
-    public void testarEmbalagem(boolean embalagem){
-        embalagem = embalagemIntegra;
+    public boolean testarEmbalagem(){
+        return embalagemIntegra;
     }
     
 }
