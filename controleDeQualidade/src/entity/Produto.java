@@ -44,7 +44,6 @@ public class Produto {
     }
 
     public void inspecionarQualidade() {
-
     }
 
     public boolean isEstaAprovado() {
@@ -54,5 +53,4 @@ public class Produto {
     public void setEstaAprovado(boolean estaAprovado) {
         this.estaAprovado = estaAprovado;
     }
-
 }
